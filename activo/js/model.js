@@ -5,6 +5,7 @@ const model = {
 		loginPage: "Login",
 		registerPage: "Register",
 		homePage: "Home",
+		currentUser: {},
 	},
 	input: {
 		credentialsLogin: {
@@ -189,6 +190,14 @@ const model = {
 						],
 					},
 				],
+			},
+			{
+				id: 6,
+				email: "kri@kri.kri",
+				username: "kri",
+				password: "kri",
+				age: 13,
+				groups: [],
 			},
 		],
 		filters: [

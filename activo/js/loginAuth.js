@@ -9,8 +9,8 @@ function checkInfo() {
 			//sjekker om brukernavnet stemmer
 			if (inputPassword == userList[i].password) {
 				//sjekker om passordet stemmer
-				signedInUser = userList[i].id; //setter signedInUser til id'en til brukern
-				appView(); //bytter fra loginView() til appView()
+				model.app.currentUser = userList[i]; //setter signedInUser til id'en til brukern
+				activityView1(); //bytter fra loginView() til appView()
 			} else if (inputPassword != userList[i].password) {
 				//hvis passordet ikke stemmer
 				alert("Error, wrong username or password");

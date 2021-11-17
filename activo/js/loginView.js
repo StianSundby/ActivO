@@ -6,7 +6,6 @@ function loginView() {
             <div id="Logo">
                 <img class="logo" height="250px" width="250px" src="resources/images/ActivO.png">
             </div>
-            <p>Login page</p>
             <input  
                 class="loginWindow"
                 type="text" 
