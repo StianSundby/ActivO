@@ -1,3 +1,4 @@
+//viewet for å logge inn
 function loginView() {
 	appDiv = document.getElementById("app");
 	appDiv.innerHTML = `
@@ -19,7 +20,7 @@ function loginView() {
                 type="password" 
                 placeholder="Password" 
                 value="${model.input.credentialsLogin.password}" 
-                oninput="model.input.credentialsLogin.password = this.value, console.log(this.value)">
+                oninput="model.input.credentialsLogin.password = this.value">
             </input>
             <br>
             <button onclick="checkInfo()">Login</button>
@@ -29,6 +30,7 @@ function loginView() {
     `;
 }
 
+//viewet for å registrere en ny bruker
 function registerView() {
 	appDiv = document.getElementById("app");
 	appDiv.innerHTML = `

@@ -8,8 +8,8 @@ const model = {
 	},
 	input: {
 		credentialsLogin: {
-			username: "admin",
-			password: "admin",
+			username: "Terje",
+			password: "startcoding",
 		},
 		credentialsRegister: {
 			username: "",
@@ -17,6 +17,36 @@ const model = {
 			password: "",
 			passwordConfirm: "",
 			age: "",
+			groups: [
+				{
+					id: 5,
+					name: "Group 1",
+					members: [
+						{ name: "Elisabeth", age: 30 },
+						{ name: "Emil", age: 29 },
+						{ name: "Erik", age: 27 },
+						{ name: "Even", age: 26 },
+					],
+				},
+				{
+					id: 8,
+					name: "Group 2",
+					members: [
+						{ name: "Flemming", age: 30 },
+						{ name: "Geir", age: 29 },
+						{ name: "Harald", age: 27 },
+					],
+				},
+				{
+					id: 9,
+					name: "Group 3",
+					members: [
+						{ name: "Jonas", age: 30 },
+						{ name: "Karsten", age: 29 },
+						{ name: "Kasper", age: 27 },
+					],
+				},
+			],
 		},
 	},
 	data: {
@@ -27,6 +57,48 @@ const model = {
 				username: "Terje",
 				password: "startcoding",
 				age: 50,
+				groups: [
+					{
+						id: 4,
+						name: "Group 1",
+						members: [
+							{ name: "Adrian", age: 30 },
+							{ name: "Alexander", age: 29 },
+							{ name: "Anders", age: 27 },
+						],
+					},
+					{
+						id: 6,
+						name: "Group 2",
+						members: [
+							{ name: "Asbjørn", age: 30 },
+							{ name: "Bjørn", age: 29 },
+							{ name: "Carina", age: 27 },
+						],
+					},
+					{
+						id: 7,
+						name: "Group 3",
+						members: [
+							{ name: "Chris", age: 30 },
+							{ name: "Christoffer", age: 29 },
+							{ name: "Danica", age: 27 },
+							{ name: "Daniel", age: 23 },
+							{ name: "Eirik", age: 30 },
+						],
+					},
+					{
+						id: 10,
+						name: "Group 4",
+						members: [
+							{ name: "Chris", age: 30 },
+							{ name: "Christoffer", age: 29 },
+							{ name: "Danica", age: 27 },
+							{ name: "Daniel", age: 23 },
+							{ name: "Eirik", age: 30 },
+						],
+					},
+				],
 			},
 			{
 				id: 2,
@@ -34,18 +106,52 @@ const model = {
 				username: "Bjørnar",
 				password: "dontStressMeowth",
 				age: 27,
+				groups: [
+					{
+						id: 5,
+						name: "Group 1",
+						members: [
+							{ name: "Bayan", age: 30 },
+							{ name: "John Espen", age: 29 },
+							{ name: "Kenneth", age: 27 },
+							{ name: "Marius", age: 26 },
+							{ name: "Tomas", age: 24 },
+						],
+					},
+					{
+						id: 8,
+						name: "Group 2",
+						members: [
+							{ name: "Terje", age: 30 },
+							{ name: "Elin", age: 29 },
+							{ name: "Emil", age: 27 },
+							{ name: "Erlend", age: 26 },
+						],
+					},
+					{
+						id: 9,
+						name: "Group 3",
+						members: [
+							{ name: "Joakim", age: 30 },
+							{ name: "Lise", age: 29 },
+							{ name: "Stella", age: 27 },
+						],
+					},
+				],
 			},
 			{
 				id: 3,
 				email: "",
 				username: "Eskil",
 				age: 45,
+				groups: [],
 			},
 			{
 				id: 4,
 				email: "",
 				username: "Linn",
 				age: 40,
+				groups: [],
 			},
 			{
 				id: 5,
@@ -53,23 +159,37 @@ const model = {
 				username: "admin",
 				password: "admin",
 				age: 1,
+				groups: [
+					{
+						id: 1,
+						name: "Group 1",
+						members: [
+							{ name: "Joakim", age: 20 },
+							{ name: "Kristian", age: 19 },
+							{ name: "Stian", age: 24 },
+						],
+					},
+					{
+						id: 2,
+						name: "Group 2",
+						members: [
+							{ name: "Marius", age: 27 },
+							{ name: "Christian", age: 31 },
+						],
+					},
+					{
+						id: 3,
+						name: "Group 3",
+						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+						],
+					},
+				],
 			},
-		],
-		groups: [
-			{
-				groupId: 1,
-				name: "Gruppe 1",
-			},
-			{
-				groupId: 2,
-				name: "Gruppe 2",
-			},
-		],
-		members: [
-			{ user: 1, group: 1, group: 2 },
-			{ user: 2, group: 1, group: 2 },
-			{ user: 3, group: 1, group: 2 },
-			{ user: 4, group: 1, group: 2 },
 		],
 		filters: [
 			{ cost: true },
