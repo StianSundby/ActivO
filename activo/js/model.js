@@ -179,9 +179,161 @@ const model = {
 						],
 					},
 					{
-						id: 3,
+						id: 12,
 						name: "Group 3",
 						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+						],
+					},
+					{
+						id: 13,
+						name: "Group 4",
+						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+						],
+					},
+					{
+						id: 14,
+						name: "Group 5",
+						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+						],
+					},
+					{
+						id: 15,
+						name: "Group 6",
+						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+						],
+					},
+					{
+						id: 16,
+						name: "Group 7",
+						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+						],
+					},
+					{
+						id: 17,
+						name: "Group 8",
+						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+						],
+					},
+					{
+						id: 18,
+						name: "Group 9",
+						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+						],
+					},
+					{
+						id: 19,
+						name: "Group 10",
+						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+						],
+					},
+					{
+						id: 20,
+						name: "Group 11",
+						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+						],
+					},
+					{
+						id: 21,
+						name: "Group 12",
+						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+						],
+					},
+					{
+						id: 22,
+						name: "Group 13",
+						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+						],
+					},
+					{
+						id: 23,
+						name: "Group 14",
+						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+						],
+					},
+					{
+						id: 24,
+						name: "Group 15",
+						members: [
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
+							{ name: "Andreas", age: 30 },
+							{ name: "Kristoffer", age: 29 },
+							{ name: "Mikkel", age: 2021 },
+							{ name: "Stigh", age: 26 },
+							{ name: "Vanja", age: 24 },
 							{ name: "Andreas", age: 30 },
 							{ name: "Kristoffer", age: 29 },
 							{ name: "Mikkel", age: 2021 },
@@ -207,6 +359,7 @@ const model = {
 			{ Winter: false },
 			{ physicalUpperbody: false },
 			{ physicalLowerbody: false },
+			{ ageRestriction: false },
 		],
 		activities: [
 			{
@@ -215,12 +368,14 @@ const model = {
 				indoors: false,
 				physicalUpperBody: false,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Go for a run",
 				cost: false,
 				indoors: false,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Go to the gym",
@@ -229,6 +384,7 @@ const model = {
 				city: true,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Cross-country skiing",
@@ -238,6 +394,7 @@ const model = {
 				winter: true,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Downhill-skiing",
@@ -247,6 +404,7 @@ const model = {
 				winter: true,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: 60,
 			},
 			{
 				name: "Bikeride",
@@ -255,6 +413,7 @@ const model = {
 				winter: false,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Go for a swim",
@@ -263,6 +422,7 @@ const model = {
 				winter: false,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: 90,
 			},
 			{
 				name: "Rockclimbing",
@@ -270,6 +430,7 @@ const model = {
 				indoors: true,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Play tennis",
@@ -277,6 +438,7 @@ const model = {
 				city: false,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Go bowling",
@@ -285,6 +447,7 @@ const model = {
 				city: true,
 				physicalUpperBody: true,
 				physicalLowerbody: false,
+				ageRestriction: 90,
 			},
 			{
 				name: "Go to the cinema",
@@ -293,6 +456,7 @@ const model = {
 				city: true,
 				physicalUpperBody: false,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Go to an Escape Room",
@@ -301,6 +465,7 @@ const model = {
 				city: true,
 				physicalUpperBody: false,
 				physicalLowerbody: true,
+				ageRestriction: 60,
 			},
 			{
 				name: "Play squash",
@@ -308,6 +473,7 @@ const model = {
 				city: true,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: 80,
 			},
 			{
 				name: "Go to a concert",
@@ -316,6 +482,7 @@ const model = {
 				city: true,
 				physicalUpperBody: false,
 				physicalLowerbody: false,
+				ageRestriction: 70,
 			},
 			{
 				name: "Play some board games",
@@ -323,6 +490,7 @@ const model = {
 				indoors: true,
 				physicalUpperBody: true,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Play a game of cards",
@@ -331,6 +499,7 @@ const model = {
 				city: false,
 				physicalUpperBody: true,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Go on a fishing trip",
@@ -339,6 +508,7 @@ const model = {
 				city: false,
 				physicalUpperBody: true,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Go camping",
@@ -347,6 +517,7 @@ const model = {
 				city: false,
 				physicalUpperBody: false,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Go to the theatre",
@@ -355,6 +526,7 @@ const model = {
 				city: true,
 				physicalUpperBody: false,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Play golf",
@@ -364,6 +536,7 @@ const model = {
 				winter: false,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Go play minigolf",
@@ -372,6 +545,7 @@ const model = {
 				city: true,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Go on a road-trip",
@@ -379,6 +553,7 @@ const model = {
 				indoors: false,
 				physicalUpperBody: false,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Go to the beach",
@@ -387,6 +562,7 @@ const model = {
 				winter: false,
 				physicalUpperBody: false,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Go ice-skating",
@@ -394,12 +570,14 @@ const model = {
 				winter: true,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: 90,
 			},
 			{
 				name: "Grab something to eat",
 				cost: true,
 				physicalUpperBody: false,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Sing some karaoke",
@@ -408,6 +586,7 @@ const model = {
 				city: true,
 				physicalUpperBody: false,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Play paintball",
@@ -416,6 +595,7 @@ const model = {
 				winter: false,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: 50,
 			},
 			{
 				name: "Play lasertag",
@@ -424,6 +604,7 @@ const model = {
 				city: true,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: 40,
 			},
 			{
 				name: "Go shopping",
@@ -431,6 +612,7 @@ const model = {
 				city: true,
 				physicalUpperBody: false,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Go on a boat ride",
@@ -440,6 +622,7 @@ const model = {
 				winter: false,
 				physicalUpperBody: false,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Go to an amusementpark",
@@ -448,6 +631,7 @@ const model = {
 				city: false,
 				physicalUpperBody: false,
 				physicalLowerbody: true,
+				ageRestriction: 80,
 			},
 			{
 				name: "Visit a museum",
@@ -456,6 +640,7 @@ const model = {
 				city: true,
 				physicalUpperBody: false,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Visit a zoo",
@@ -465,6 +650,7 @@ const model = {
 				winter: false,
 				physicalUpperBody: false,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Play shuffleboard",
@@ -473,6 +659,7 @@ const model = {
 				city: true,
 				physicalUpperBody: true,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Go to the carnival",
@@ -481,6 +668,7 @@ const model = {
 				city: true,
 				physicalUpperBody: false,
 				physicalLowerbody: false,
+				ageRestriction: 100,
 			},
 			{
 				name: "Go rollerblading",
@@ -490,6 +678,7 @@ const model = {
 				winter: false,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: 70,
 			},
 			{
 				name: "Grab a coffee",
@@ -498,6 +687,7 @@ const model = {
 				city: true,
 				physicalUpperBody: false,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Go GeoCaching",
@@ -506,6 +696,7 @@ const model = {
 				city: false,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Bake something tasty",
@@ -514,6 +705,7 @@ const model = {
 				city: false,
 				physicalUpperBody: true,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Paint a picture",
@@ -522,6 +714,7 @@ const model = {
 				city: false,
 				physicalUpperBody: true,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 			{
 				name: "Go bungee-jumping",
@@ -531,6 +724,7 @@ const model = {
 				winter: false,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: 60,
 			},
 			{
 				name: "Play snooker",
@@ -540,6 +734,7 @@ const model = {
 				winter: true,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: false,
 			},
 			{
 				name: "Go skydiving!",
@@ -549,12 +744,14 @@ const model = {
 				winter: false,
 				physicalUpperBody: true,
 				physicalLowerbody: true,
+				ageRestriction: 60,
 			},
 			{
 				name: "Go to a flee-market",
 				cost: true,
 				physicalUpperBody: false,
 				physicalLowerbody: false,
+				ageRestriction: false,
 			},
 		],
 	},

@@ -1,45 +1,55 @@
+* {
+	font-family: Arial, Helvetica, sans-serif;
+}
 :root {
 	font-size: 16px;
 }
 
 body {
-	background-color: rgb(134, 134, 134);
 	color: white;
+	background-color: rgb(134, 134, 134);
 }
 div.loginWindow {
 	text-align: center;
-	background-color: rgb(71, 71, 71);
-	margin-left: 400px;
-	margin-right: 400px;
-	padding-bottom: 300px;
-	margin-top: 145px;
-	filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
-	min-height: 200px;
+
 	min-width: 300px;
+	min-height: 200px;
+	margin-left: 25vw;
+	margin-right: 25vw;
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+	padding-bottom: 10vh;
+
+	border: 2px solid #ec7f13;
+	background-color: rgb(71, 71, 71);
+	filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
 }
 input.loginWindow {
-	border: 2px double black;
-	margin-bottom: 2px;
-	height: 30px;
-	width: 200px;
 	font-size: large;
-	font-family: "Open Sans", sans-serif;
+
+	margin-bottom: 2px;
+	width: 200px;
+	height: 30px;
+
+	border: 2px double black;
 }
 p {
-	font-family: "Open Sans", sans-serif;
 	font-size: 1.5rem;
 }
 button {
-	background-color: #ec7f13;
-	border: none;
+	font-size: 1.5rem;
+
 	width: 210px;
 	height: 60px;
-	font-family: "Open Sans", sans-serif;
-	font-size: 1.5rem;
 	margin-top: 10px;
+	margin-left: 0px;
+
+	border: none;
+	background-color: #ec7f13;
 }
 button:hover {
 	cursor: pointer;
-	filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));
+
 	background-color: #d67310;
+	filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));
 }

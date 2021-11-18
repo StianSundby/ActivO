@@ -1,6 +1,8 @@
 function groupsView1() {
 	appDiv.innerHTML = /*html*/ `
-	xd
+	<div class="groupContainer"> 
+	
+	</div>
     `;
 }
 
@@ -12,3 +14,5 @@ function groups() {
     `;
 	groupsView1();
 }
+
+//TODO: createNewGroup()
