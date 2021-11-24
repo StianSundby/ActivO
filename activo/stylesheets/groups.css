@@ -1,0 +1,38 @@
+.groupStyle {
+	cursor: pointer;
+	line-height: 2rem;
+	padding: 5%;
+	overflow: scroll;
+	text-align: center;
+
+	z-index: 2;
+	grid-area: 1 / 2 / 2 / 3;
+
+	height: 60vh;
+	min-width: 10vw;
+	max-width: 30vw;
+	padding: 0.5rem;
+	margin: 0.5rem;
+	font-size: 1.5rem;
+	background-color: rgb(65, 65, 65);
+}
+
+.groupMembersOverview {
+	text-align: center;
+}
+
+.css-input {
+	padding: 5px;
+	font-size: 16px;
+	border-width: 1px;
+	border-color: #ec7f13;
+	background-color: #414141;
+	color: #ec7f13;
+	border-style: solid;
+	border-radius: 0px;
+	box-shadow: 0px 0px 0px rgba(66, 66, 66, 0.75);
+	text-shadow: 0px 0px 0px rgba(66, 66, 66, 0.75);
+}
+.css-input:focus {
+	outline: 2px solid #ec7f13;
+}

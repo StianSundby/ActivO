@@ -1,8 +1,3 @@
-let signedInUser; //settes i loginAuth.js når brukern logger inn. Det er id'en til brukern
-let activityButton = "activeButton"; //brukes for å indikere hvilken side du er på. Er egentlig bare en style
-let groupButton = ""; //samme som over. Det byttes hvilken som har "activeButton"
-let namesOfGroups; //viser alle navnene på gruppene tilknyttet brukern. Genereres i getGroups()
-
 //venstre side av appen. Høyre side settes inn i "page" eller "loadActivity"
 function activityView1() {
 	appDiv.innerHTML = /*html*/ `
@@ -14,7 +9,7 @@ function activityView1() {
 					<div>
 						<button class="${activityButton}" onclick="newActivity()">New activity</button>
 						<br>
-						<button class="${groupButton}" onclick="groups()">Groups</button>
+						<button class="${groupButton}" onclick="groupsView1()">Groups</button>
 						<br>
 						<button id="logoutButton" onclick="loginView()">Logout</button>
 					</div>
@@ -28,7 +23,8 @@ function activityView1() {
     `;
 }
 
-//====================================================NEW ACTIVITY=============================================
+// ==================================CONTROLLER=============================
+//Må være her for første siden
 
 //Skjer når du laster inn siden. Viser gruppene til brukern som er logget inn
 function loadActivity() {
@@ -36,15 +32,6 @@ function loadActivity() {
 	groupButton = "";
 	getGroups();
 	return namesOfGroups;
-}
-
-//Lik som loadActivity(), men:
-//skjer hvis du er på Groups og skal bytte tilbake til New Activity
-function newActivity() {
-	activityButton = "activeButton";
-	groupButton = "";
-	getGroups();
-	activityView1();
 }
 
 //signedInUser er ID'en til brukern, som starter på 1. Så vi tar -1 for å finne index

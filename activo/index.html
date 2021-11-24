@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="stylesheets/login.css" />
 		<link rel="stylesheet" href="stylesheets/app.css" />
 		<link rel="stylesheet" href="stylesheets/checkbox.css" />
+		<link rel="stylesheet" href="stylesheets/groups.css" />
 		<title>Activo</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,17 +22,28 @@
 		<div id="app"></div>
 
 		<!-- Javascript -->
-		<script src="js/model.js"></script>
-		<script src="js/activityView1.js"></script>
-		<script src="js/activityView2.js"></script>
-		<script src="js/activityView3.js"></script>
-		<script src="js/loginView.js"></script>
-		<script src="js/loginAuth.js"></script>
-		<script src="js/registerNewUser.js"></script>
-		<script src="js/groupsView1.js"></script>
+
+		<!-- Models -->
+		<script src="js/model/model.js"></script>
+		<script src="js/model/declarations.js"></script>
+		<!-- View -->
+		<script src="js/view/activity/activityView1.js"></script>
+		<script src="js/view/activity/activityView2.js"></script>
+		<script src="js/view/activity/activityView3.js"></script>
+		<script src="js/view/login/loginView.js"></script>
+		<script src="js/view/group/groupsView1.js"></script>
+		<script src="js/view/group/groupsView2.js"></script>
+		<!-- Controller -->
+		<script src="js/controller/loginAuth.js"></script>
+		<script src="js/controller/registerNewUser.js"></script>
+		<script src="js/controller/groupController.js"></script>
+		<script src="js/controller/activityController.js"></script>
+		<script src="js/controller/filterController.js"></script>
+
+		<!-- Font awesome -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
 		<script>
-			loginView();
+			groupsView1();
 		</script>
 	</body>
 </html>

@@ -1,4 +1,6 @@
-let activties;
+let activtiesHtml = "";
+let activities = model.data.activities;
+let tempArray = [];
 
 function activityView3() {
 	appDiv.innerHTML = /*html*/ `
@@ -15,32 +17,12 @@ function activityView3() {
                 </div>
             </div>
             <div class="rightSide">
-                <div class="activities">${activties}</div>
+                <div class="activities">${activtiesHtml}</div>
 				<div class="activitiesDetails">${activitiesDetails()}</div>
 				<button class="nextButton" onclick="suggestActivities()">New reccomendations</button>
             </div>
 		</div>
 	</div>
     `;
+	suggestActivities();
 }
-
-suggestActivities();
-function suggestActivities() {
-	//TODO: Onlick så vises detaljer om aktiviteten?
-	activties = `
-        <div>Activity 1</div>
-        <div>Activity 2</div>
-        <div>Activity 3</div>
-    `;
-}
-
-function activitiesDetails() {
-	let activitiesDetails = `
-        nothing here yet
-    `;
-	return activitiesDetails;
-}
-
-//TODO: 3 foreslåtte aktiviteter basert på filtere og medlemmer i den valgte gruppen
-
-//TODO: "Back" knapp for å ta deg tilbake til landing page?
