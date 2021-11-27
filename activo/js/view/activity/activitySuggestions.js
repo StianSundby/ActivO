@@ -1,5 +1,7 @@
 //activitiesHtml deklareres i declaration.js og settes i filterController
+//i filterController.js
 function activitySuggestions() {
+	// suggestActivities();
 	appDiv.innerHTML = /*html*/ `
 	<div class="container">
         <div class="homeContent">
@@ -15,11 +17,9 @@ function activitySuggestions() {
             </div>
             <div class="rightSide">
                 <div class="activities">${activtiesHtml}</div>
-				// <div class="activitiesDetails">*gresshopper*</div>
-				<button class="nextButton" onclick="suggestActivities()">New reccomendations</button>
+				<button class="nextButton" onclick="randomActivity()">New reccomendations</button>
             </div>
 		</div>
 	</div>
     `;
-	suggestActivities(); //i filterController.js
 }

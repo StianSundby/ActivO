@@ -30,7 +30,7 @@ function groupInfo(groupIndex) {
 	activityFilter(); //endrer viewet
 }
 
-//called from activityFilter.js
+//kalles fra activityFilter()
 function filterInfo() {
 	let filters = model.data.filterCheckboxes; //et array med alle filterne brukern har huket av
 	let filterHtml = "";
@@ -42,7 +42,7 @@ function filterInfo() {
 				<span>${filter}</span>
 				<input type="checkbox"
 					value="${filter}"
-					onclick="checkFilter(this.value, this.checked)">
+					onclick="checkFilter(${i}, this.checked)">
 				<div class="b-input"></div>
 			</label>
 		`;

@@ -17,7 +17,7 @@ function activityFilter() {
             <div class="rightSide"> 
 				<div class="groupOverview">${page} </div>
 				<div class="filterOverview">${filterInfo()}</div>
-				<button class="nextButton" onclick="activitySuggestions()">Next</button>
+				<button class="nextButton" onclick="suggestActivities(), activitySuggestions()">Next</button>
             </div>
 		</div>
 	</div>

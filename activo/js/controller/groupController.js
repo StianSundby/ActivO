@@ -4,6 +4,9 @@ function loadGroups() {
 	return groupList;
 }
 
+//kalles fra loadGroups(), som kalles fra groupHome()
+//viser en liste med grupper hvis brukern har 1 eller fler.
+//hvis ikke så viser den en knapp som sender deg tilbake hvor du kan lage en
 function groups() {
 	groupList = "";
 	if (model.app.currentUser.groups.length <= 0) {
