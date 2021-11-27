@@ -1,7 +1,4 @@
-//TODO: Ok button
-//TODO: addMember() funksjonen
-//TODO: fjerne medlemmer
-function groupsView2() {
+function groupsAdd() {
 	appDiv.innerHTML = /*html*/ `
 	<div class="container">
         <div class="homeContent">
@@ -16,14 +13,12 @@ function groupsView2() {
 				</div>
 			</div>
 				<div class="groupStyle">
-                    <input style="width: 90%;" class="css-input groupName" type="text" placeholder ="${groupToView}">
-                    <br><br>
-                    <input class="css-input newMemberName" type="text" placeholder="Name"/>
-                    <input class="css-input age" type="number" placeholder="Age"/>
-                    <button class="addNewMemberButton" onclick="addMember()">Add member</button>
+                <h1> Create new group </h1>
+                    <input oninput="model.input.createNewGroup.name = this.value"style="width: 90%;" class="css-input groupName" type="text" placeholder ="Group name">
+                    <button onclick ="createNewGroup()"> Create group </button>
                     <div class="groupMembersOverview">${groupMembers}</div>
 				</div>
-                <button>Ok</button>	
+                <button onclick="groupsHome()">Done</button>	
 		</div>
     `;
 }

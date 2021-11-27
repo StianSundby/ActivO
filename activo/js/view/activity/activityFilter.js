@@ -1,8 +1,6 @@
-let activtiesHtml = "";
-let activities = model.data.activities;
-let tempArray = [];
+let page = "";
 
-function activityView3() {
+function activityFilter() {
 	appDiv.innerHTML = /*html*/ `
 	<div class="container">
         <div class="homeContent">
@@ -16,13 +14,12 @@ function activityView3() {
 					<button id="logoutButton" onclick="loginView()">Logout</button>
                 </div>
             </div>
-            <div class="rightSide">
-                <div class="activities">${activtiesHtml}</div>
-				<div class="activitiesDetails">${activitiesDetails()}</div>
-				<button class="nextButton" onclick="suggestActivities()">New reccomendations</button>
+            <div class="rightSide"> 
+				<div class="groupOverview">${page} </div>
+				<div class="filterOverview">${filterInfo()}</div>
+				<button class="nextButton" onclick="activitySuggestions()">Next</button>
             </div>
 		</div>
 	</div>
     `;
-	suggestActivities();
 }

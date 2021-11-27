@@ -1,5 +1,5 @@
 //venstre side av appen. Høyre side settes inn i "page" eller "loadActivity"
-function activityView1() {
+function activityHome() {
 	appDiv.innerHTML = /*html*/ `
 	<div class="container">
 	
@@ -9,7 +9,7 @@ function activityView1() {
 					<div>
 						<button class="${activityButton}" onclick="newActivity()">New activity</button>
 						<br>
-						<button class="${groupButton}" onclick="groupsView1()">Groups</button>
+						<button class="${groupButton}" onclick="groupsHome()">Groups</button>
 						<br>
 						<button id="logoutButton" onclick="loginView()">Logout</button>
 					</div>
@@ -40,7 +40,7 @@ function getGroups() {
 	if (model.app.currentUser.groups.length <= 0) {
 		namesOfGroups += `
 		<p class="groupList1">You don't have any groups, click the button to make one</p>
-		<button onclick="groupsView1()">Next</button>
+		<button onclick="groupsHome()">Next</button>
 		`;
 		return;
 	}

@@ -1,6 +1,5 @@
-let page = "";
-
-function activityView2() {
+//activitiesHtml deklareres i declaration.js og settes i filterController
+function activitySuggestions() {
 	appDiv.innerHTML = /*html*/ `
 	<div class="container">
         <div class="homeContent">
@@ -14,12 +13,13 @@ function activityView2() {
 					<button id="logoutButton" onclick="loginView()">Logout</button>
                 </div>
             </div>
-            <div class="rightSide"> 
-				<div class="groupOverview">${page} </div>
-				<div class="filterOverview">${filterInfo()}</div>
-				<button class="nextButton" onclick="activityView3()">Next</button>
+            <div class="rightSide">
+                <div class="activities">${activtiesHtml}</div>
+				// <div class="activitiesDetails">*gresshopper*</div>
+				<button class="nextButton" onclick="suggestActivities()">New reccomendations</button>
             </div>
 		</div>
 	</div>
     `;
+	suggestActivities(); //i filterController.js
 }

@@ -1,5 +1,3 @@
-let appDiv = document.getElementById("app");
-
 const model = {
 	app: {
 		loginPage: "Login",
@@ -8,10 +6,20 @@ const model = {
 		currentUser: {},
 	},
 	input: {
+		currentGroup: null,
+		changeGroupName: "",
+		editingGroup: "",
 		filtersChecked: [],
 		credentialsLogin: {
 			username: "Terje",
 			password: "startcoding",
+		},
+		createNewGroup: {
+			name: "Terje",
+		},
+		addNewMember: {
+			name: null,
+			age: null,
 		},
 		credentialsRegister: {
 			username: "",
@@ -52,6 +60,7 @@ const model = {
 		},
 	},
 	data: {
+		lastGroupID: 23,
 		filterCheckboxes: [
 			"Age limit",
 			"Free",
@@ -70,7 +79,7 @@ const model = {
 				age: 50,
 				groups: [
 					{
-						id: 4,
+						id: 1,
 						name: "Group 1",
 						members: [
 							{ name: "Adrian", age: 30 },
@@ -79,7 +88,7 @@ const model = {
 						],
 					},
 					{
-						id: 6,
+						id: 2,
 						name: "Group 2",
 						members: [
 							{ name: "Asbjørn", age: 30 },
@@ -88,19 +97,8 @@ const model = {
 						],
 					},
 					{
-						id: 7,
+						id: 3,
 						name: "Group 3",
-						members: [
-							{ name: "Chris", age: 30 },
-							{ name: "Christoffer", age: 29 },
-							{ name: "Danica", age: 27 },
-							{ name: "Daniel", age: 23 },
-							{ name: "Eirik", age: 30 },
-						],
-					},
-					{
-						id: 10,
-						name: "Group 4",
 						members: [
 							{ name: "Chris", age: 30 },
 							{ name: "Christoffer", age: 29 },
@@ -119,7 +117,7 @@ const model = {
 				age: 27,
 				groups: [
 					{
-						id: 5,
+						id: 4,
 						name: "Group 1",
 						members: [
 							{ name: "Bayan", age: 30 },
@@ -130,7 +128,7 @@ const model = {
 						],
 					},
 					{
-						id: 8,
+						id: 5,
 						name: "Group 2",
 						members: [
 							{ name: "Terje", age: 30 },
@@ -140,7 +138,7 @@ const model = {
 						],
 					},
 					{
-						id: 9,
+						id: 6,
 						name: "Group 3",
 						members: [
 							{ name: "Joakim", age: 30 },
@@ -172,7 +170,7 @@ const model = {
 				age: 1,
 				groups: [
 					{
-						id: 1,
+						id: 7,
 						name: "Group 1",
 						members: [
 							{ name: "Joakim", age: 20 },
@@ -181,7 +179,7 @@ const model = {
 						],
 					},
 					{
-						id: 2,
+						id: 8,
 						name: "Group 2",
 						members: [
 							{ name: "Marius", age: 27 },
@@ -189,7 +187,7 @@ const model = {
 						],
 					},
 					{
-						id: 12,
+						id: 9,
 						name: "Group 3",
 						members: [
 							{ name: "Andreas", age: 30 },
@@ -199,127 +197,7 @@ const model = {
 							{ name: "Vanja", age: 24 },
 						],
 					},
-					{
-						id: 13,
-						name: "Group 4",
-						members: [
-							{ name: "Andreas", age: 30 },
-							{ name: "Kristoffer", age: 29 },
-							{ name: "Mikkel", age: 2021 },
-							{ name: "Stigh", age: 26 },
-							{ name: "Vanja", age: 24 },
-						],
-					},
-					{
-						id: 14,
-						name: "Group 5",
-						members: [
-							{ name: "Andreas", age: 30 },
-							{ name: "Kristoffer", age: 29 },
-							{ name: "Mikkel", age: 2021 },
-							{ name: "Stigh", age: 26 },
-							{ name: "Vanja", age: 24 },
-						],
-					},
-					{
-						id: 15,
-						name: "Group 6",
-						members: [
-							{ name: "Andreas", age: 30 },
-							{ name: "Kristoffer", age: 29 },
-							{ name: "Mikkel", age: 2021 },
-							{ name: "Stigh", age: 26 },
-							{ name: "Vanja", age: 24 },
-						],
-					},
-					{
-						id: 16,
-						name: "Group 7",
-						members: [
-							{ name: "Andreas", age: 30 },
-							{ name: "Kristoffer", age: 29 },
-							{ name: "Mikkel", age: 2021 },
-							{ name: "Stigh", age: 26 },
-							{ name: "Vanja", age: 24 },
-						],
-					},
-					{
-						id: 17,
-						name: "Group 8",
-						members: [
-							{ name: "Andreas", age: 30 },
-							{ name: "Kristoffer", age: 29 },
-							{ name: "Mikkel", age: 2021 },
-							{ name: "Stigh", age: 26 },
-							{ name: "Vanja", age: 24 },
-						],
-					},
-					{
-						id: 18,
-						name: "Group 9",
-						members: [
-							{ name: "Andreas", age: 30 },
-							{ name: "Kristoffer", age: 29 },
-							{ name: "Mikkel", age: 2021 },
-							{ name: "Stigh", age: 26 },
-							{ name: "Vanja", age: 24 },
-						],
-					},
-					{
-						id: 19,
-						name: "Group 10",
-						members: [
-							{ name: "Andreas", age: 30 },
-							{ name: "Kristoffer", age: 29 },
-							{ name: "Mikkel", age: 2021 },
-							{ name: "Stigh", age: 26 },
-							{ name: "Vanja", age: 24 },
-						],
-					},
-					{
-						id: 20,
-						name: "Group 11",
-						members: [
-							{ name: "Andreas", age: 30 },
-							{ name: "Kristoffer", age: 29 },
-							{ name: "Mikkel", age: 2021 },
-							{ name: "Stigh", age: 26 },
-							{ name: "Vanja", age: 24 },
-						],
-					},
-					{
-						id: 21,
-						name: "Group 12",
-						members: [
-							{ name: "Andreas", age: 30 },
-							{ name: "Kristoffer", age: 29 },
-							{ name: "Mikkel", age: 2021 },
-							{ name: "Stigh", age: 26 },
-							{ name: "Vanja", age: 24 },
-						],
-					},
-					{
-						id: 22,
-						name: "Group 13",
-						members: [
-							{ name: "Andreas", age: 30 },
-							{ name: "Kristoffer", age: 29 },
-							{ name: "Mikkel", age: 2021 },
-							{ name: "Stigh", age: 26 },
-							{ name: "Vanja", age: 24 },
-						],
-					},
-					{
-						id: 23,
-						name: "Group 14",
-						members: [
-							{ name: "Andreas", age: 30 },
-							{ name: "Kristoffer", age: 29 },
-							{ name: "Mikkel", age: 2021 },
-							{ name: "Stigh", age: 26 },
-							{ name: "Vanja", age: 24 },
-						],
-					},
+					,
 				],
 			},
 			{
@@ -334,71 +212,71 @@ const model = {
 		activities: [
 			{
 				name: "Go for a walk",
-				filters: ["physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Go for a run",
-				filters: ["physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Go to the gym",
-				filters: ["physicalLowerbody", "physicalLowerbody", "indoors"],
+				filters: [],
 			},
 			{
 				name: "Cross-country skiing",
-				filters: ["winter", "physicalUpperbody", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Downhill-skiing",
-				filters: ["cost", "winter", "physicalUpperbody", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Bikeride",
-				filters: ["physicalUpperbody", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Go for a swim",
-				filters: ["physicalUpperbody", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Rockclimbing",
-				filters: ["cost", "physicalUpperbody", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Play tennis",
-				filters: ["cost", "physicalUpperbody", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Go bowling",
-				filters: ["cost", "indoors", "physicalUpperbody"],
+				filters: [],
 			},
 			{
 				name: "Go to the cinema",
-				filters: ["cost", "indoors", "city"],
+				filters: [],
 			},
 			{
 				name: "Go to an Escape Room",
-				filters: ["true", "indoors", "city", "physicalUpperbody", "ageRestriction"],
+				filters: [],
 			},
 			{
 				name: "Play squash",
-				filters: ["cost", "city", "physicalUpperbody", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Go to a concert",
-				filters: ["cost", "city", "ageRestriction"],
+				filters: [],
 			},
 			{
 				name: "Play some board games",
-				filters: ["indoors", "physicalUpperbody"],
+				filters: [],
 			},
 			{
 				name: "Play a game of cards",
-				filters: ["indoors", "physicalUpperbody"],
+				filters: [],
 			},
 			{
 				name: "Go on a fishing trip",
-				filters: ["physicalUpperbody"],
+				filters: [],
 			},
 			{
 				name: "Go camping",
@@ -406,15 +284,15 @@ const model = {
 			},
 			{
 				name: "Go to the theatre",
-				filters: ["cost", "indoors", "city"],
+				filters: [],
 			},
 			{
 				name: "Play golf",
-				filters: ["cost", "physicalUpperbody", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Go play minigolf",
-				filters: ["cost", "city", "physicalUpperbody", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Go on a road-trip",
@@ -425,28 +303,28 @@ const model = {
 				filters: [],
 			},
 			{
-				name: "Go ice-skating",
-				filter: ["cost", "winter", "physicalUpperbody", "physicalLowerbody"],
+				name: "Go ice skating",
+				filters: [],
 			},
 			{
 				name: "Grab something to eat",
-				filters: ["cost"],
+				filters: [],
 			},
 			{
 				name: "Sing some karaoke",
-				filters: ["cost", "indoors", "city"],
+				filters: [],
 			},
 			{
 				name: "Play paintball",
-				filters: ["cost", "physicalUpperbody", "physicalLowerbody", "ageRestricton"],
+				filters: [],
 			},
 			{
 				name: "Play lasertag",
-				filters: ["cost", "physicalUpperbody", "physicalLowerbody", "ageRestriction"],
+				filters: [],
 			},
 			{
 				name: "Go shopping",
-				filters: ["cost", "city", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Go on a boat ride",
@@ -454,59 +332,59 @@ const model = {
 			},
 			{
 				name: "Go to an amusementpark",
-				filters: ["cost", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Visit a museum",
-				filters: ["cost", "indoors", "city", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Visit a zoo",
-				filters: ["cost", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Play shuffleboard",
-				filters: ["cost", "indoors", "city", "physicalUpperbody"],
+				filters: [],
 			},
 			{
 				name: "Go to the carnival",
-				filters: ["cost", "city"],
+				filters: [],
 			},
 			{
 				name: "Go rollerblading",
-				filters: ["physicalUpperbody", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Grab a coffee",
-				filters: ["cost", "indoors", "city"],
+				filters: [],
 			},
 			{
 				name: "Go GeoCaching",
-				filters: ["physicalUpperbody", "physicalLowerbody"],
+				filters: [],
 			},
 			{
 				name: "Bake something tasty",
-				filters: ["indoors", "physicalUpperbody"],
+				filters: [],
 			},
 			{
 				name: "Paint a picture",
-				filters: ["cost", "true", "physicalUpperbody"],
+				filters: [],
 			},
 			{
 				name: "Go bungee-jumping",
-				filters: ["cost", "physicalUpperbody", "physicalLowerbody", "ageRestriction"],
+				filters: [],
 			},
 			{
 				name: "Play snooker",
-				filters: ["cost", "indoors", "physicalUpperbody"],
+				filters: [],
 			},
 			{
 				name: "Go skydiving!",
-				filters: ["cost", "physicalUpperbody", "physicalLowerbody", "ageRestriction"],
+				filters: [],
 			},
 			{
 				name: "Go to a flee-market",
-				filters: ["cost"],
+				filters: [],
 			},
 		],
 	},

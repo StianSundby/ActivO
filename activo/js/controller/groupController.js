@@ -1,3 +1,4 @@
+//kalles fra groupsHome for å hente gruppene til brukern
 function loadGroups() {
 	groups();
 	return groupList;
@@ -8,7 +9,7 @@ function groups() {
 	if (model.app.currentUser.groups.length <= 0) {
 		groupList += `
 		<p class="groupList1">You don't have any groups, click the button to make one</p>
-		<button onclick="groupsView1()">Next</button>
+		<button onclick="groupsHome()">Next</button>
 		`;
 		return;
 	}
@@ -23,23 +24,57 @@ function groups() {
 			<br>
 		`;
 		groupList += groupDiv;
+		//returnerer groupList. Hvis brukern ikke har noen grupper skal den ikke returnere grupper
+		//er derfor det er skrevet sånn.
 	}
 }
 
+//kalles fra groups(), som kalles fra loadGroups(), som kalles fra groupsHome()
+//parameteret er "i" fra en for-løkke
 function editGroup(index) {
-	groupToView = model.app.currentUser.groups[index].name;
+	model.input.currentGroup = index;
+
+	groupToView = model.app.currentUser.groups[index].name; //navnet på gruppa
+	//looper gjennom alle medlemmene i gruppa
 	for (let i = 0; i < model.app.currentUser.groups[index].members.length; i++) {
 		groupMembers +=
-			`<i  style="cursor: pointer;" 
-				class="fas fa-trash filter-orange" 
-				onclick=""></i>` +
+			`<div onclick='${(model.input.editingGroup = model.app.currentUser.groups[index])}'>` +
+			`<i  style="cursor: pointer;"
+					class="fas fa-trash filter-orange">
+					</i>` +
 			model.app.currentUser.groups[index].members[i].name +
+			"</div>" +
 			"<br>";
 	}
 
-	groupsView2();
+	groupsEdit(); //endrer/oppdaterer Viewet
 }
 
-function addMember() {}
+//kalles fra groupsEdit()
+function addMember() {
+	let newMember = {
+		name: model.input.addNewMember.name,
+		age: model.input.addNewMember.age,
+	};
 
-function createNewGroup() {}
+	//pusher det nye medlemmet inn i arrayet av medlemmer til gruppa
+	currentUser.groups[model.input.currentGroup].members.push(newMember);
+}
+
+//kalles fra groupsAdd()
+function createNewGroup() {
+	let newGroup = {
+		id: model.data.lastGroupID + 1,
+		name: model.input.createNewGroup.name,
+		members: [], //ingen medlemmer enda. Det settes i groupsEdit()
+	};
+	currentUser.groups.push(newGroup); //pusher den nye gruppa inn i groups[] arrayet til brukern
+	model.data.lastGroupID = model.data.lastGroupID + 1;
+	groupsHome(); //endrer/oppdaterer Viewet
+}
+
+//Gjør akkurat det den sier den gjør
+function changeGroupName() {
+	model.app.currentUser.groups[model.input.currentGroup].name = model.input.changeGroupName;
+	groupsHome(); //endrer/oppdaterer Viewet
+}
