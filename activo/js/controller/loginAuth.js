@@ -23,3 +23,9 @@ function checkInfo() {
 		}
 	}
 }
+
+function logOut() {
+	if (confirm("Are you sure you want to log out?")) {
+		loginView();
+	} else return;
+}

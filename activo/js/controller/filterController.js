@@ -3,7 +3,10 @@ function checkFilter(index, isChecked) {
 	let key = Object.keys(filterArray[index])[0];
 	filterArray[index][key] = isChecked;
 }
-
+//|||||||||| IKKE RØR |||||||||||| IKKE RØR |||||||||||| IKKE RØR |||||||||||| IKKE RØR |||||||||||| IKKE RØR |||||||||||| IKKE RØR ||||||
+// IKKE RØR |||||||||| IKKE RØR |||||||||| IKKE RØR |||||||||||| IKKE RØR |||||||||||| IKKE RØR |||||||||||| IKKE RØR ||||||||||||||||||||
+//|||||||||| IKKE RØR |||||||||||| IKKE RØR |||||||||||| IKKE RØR |||||||||||| IKKE RØR |||||||||||| IKKE RØR |||||||||||| IKKE RØR ||||||
+// IKKE RØR |||||||| IKKE RØR |||||||||||| IKKE RØR ||||||||||||| IKKE RØR |||||||||||| IKKE RØR |||||||||||| IKKE RØR |||||||||||||||||||
 function suggestActivities() {
 	let filterArray = model.input.filtersChecked;
 	let activityArray = model.data.activities;

@@ -48,7 +48,7 @@ const model = {
 		users: [
 			{
 				id: 1,
-				email: "",
+				email: "terje@terje.com",
 				username: "Terje",
 				password: "startcoding",
 				age: 50,
@@ -86,7 +86,7 @@ const model = {
 			},
 			{
 				id: 2,
-				email: "",
+				email: "bjørnar@bjørnar.com",
 				username: "Bjørnar",
 				password: "dontStressMeowth",
 				age: 27,
@@ -125,7 +125,7 @@ const model = {
 			},
 			{
 				id: 3,
-				email: "",
+				email: "linn@linn.com",
 				username: "Linn",
 				age: 40,
 				groups: [],

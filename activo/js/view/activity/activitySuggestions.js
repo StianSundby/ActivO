@@ -12,7 +12,7 @@ function activitySuggestions() {
                     <br>
                     <button class="${groupButton}" onclick="groups()">Groups</button>
 					<br>
-					<button id="logoutButton" onclick="loginView()">Logout</button>
+					<button id="logoutButton" onclick="logOut()">Logout</button>
                 </div>
             </div>
             <div class="rightSide">

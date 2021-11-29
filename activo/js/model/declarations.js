@@ -1,7 +1,15 @@
 let appDiv = document.getElementById("app"); //main div for all views
 
+//disse brukes for det meste i loginAuth
+let users = model.data.users;
+let inputUsername = model.input.credentialsRegister.username;
+let inputEmail = model.input.credentialsRegister.email;
+let inputPassword = model.input.credentialsRegister.password;
+let inputPasswordConfirm = model.input.credentialsRegister.passwordConfirm;
+let inputAge = model.input.credentialsRegister.age;
+
 let signedInUser; //ID'en til brukern. Settes i loginAuth.js når brukern logger inn.
-let currentUser = model.app.currentUser; //hele brukern, ikke bare ID som den over
+let currentUser = model.app.currentUser; //hele bruker-objektet, ikke bare ID som den over
 let activityButton = "activeButton"; //brukes for å indikere hvilken side du er på. Er egentlig bare en style
 let groupButton = ""; //samme som over. Det bytter hvilken som har "activeButton"
 let namesOfGroups; //viser alle navnene på gruppene tilknyttet brukern. Genereres i getGroups()

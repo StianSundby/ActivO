@@ -1,43 +1,43 @@
 function registerNewUser() {
-	//disse er bare her så vi slipper å skrive så mye
-	let userList = model.data.users;
-	let inputUsername = model.input.credentialsRegister.username;
-	let inputEmail = model.input.credentialsRegister.email;
-	let inputPassword = model.input.credentialsRegister.password;
-	let inputPasswordConfirm = model.input.credentialsRegister.passwordConfirm;
-	let inputAge = model.input.credentialsRegister.age;
-
 	if (
 		//sjekker at alle feltene er fylt ut
-		!inputUsername ||
-		!inputEmail ||
-		!inputPassword ||
-		!inputPasswordConfirm ||
-		!inputAge
+		inputUsername != "" ||
+		inputEmail != "" ||
+		inputPassword != "" ||
+		inputPasswordConfirm != "" ||
+		inputAge != ""
 	) {
 		alert("Please fill out all the fields");
 		return;
 	}
 	//sjekk om det allerede er en bruker i arrayet med samme username
-	for (let i = 0; i < userList.length; i++) {
-		if (inputUsername == userList[i].username) {
+	for (let i = 0; i < users.length; i++) {
+		console.log("checking user: " + i + ":");
+		console.log(users[i]);
+		console.log("//");
+		if (inputUsername.toLowerCase() === users[i].username.toLowerCase()) {
 			alert("Username is already taken");
 			return;
 		}
 		//sjekk om det allerede en bruker i arrayet med samme email
-		if (inputEmail == userList[i].email) {
+		else if (inputEmail.toLowerCase() === users[i].email.toLowerCase()) {
+			console.log(users[i].email);
 			alert("Email is already in use");
 			return;
 		}
 	}
 	//sjekk om begge passordfeltene er identiske
 	if (inputPassword !== inputPasswordConfirm) {
-		alert("Password must match");
+		alert("Passwords must match");
+		return;
+	}
+	if (validateEmail(inputEmail) !== true) {
+		alert("Please enter a valid email address");
 		return;
 	}
 	//ny bruker objekt
 	let user = {
-		id: userList.length + 1,
+		id: users.length + 1,
 		email: inputEmail,
 		username: inputUsername,
 		password: inputPassword,
@@ -52,4 +52,16 @@ function registerNewUser() {
 function pushData(user) {
 	model.data.users.push(user);
 	loginView();
+}
+
+function validateEmail(email) {
+	//              string@string.string
+	var emailformat = /\S+@\S+\.\S+/;
+	console.log(emailformat);
+	console.log(email);
+	console.log(emailformat.test(email));
+	if (email.match(emailformat)) {
+		return true;
+	}
+	return false;
 }
