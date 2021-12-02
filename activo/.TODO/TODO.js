@@ -1,7 +1,4 @@
-//TODO: LEGGE INN KOMMENTARER I KODEN DER DET IKKE ER NOEN/SÅ FORT DU BLIR FORVIRRA!!!!!!!!!!!
-
 //TODO: styling
-//TODO: flytte variabel deklareringer til declarations.js
 
 //TODO: registerNewUser.js
 //      TODO: sjekke at emailen er skrevet som en email. Regex?

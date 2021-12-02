@@ -10,6 +10,7 @@ let inputAge = model.input.credentialsRegister.age;
 
 let signedInUser; //ID'en til brukern. Settes i loginAuth.js når brukern logger inn.
 let currentUser = model.app.currentUser; //hele bruker-objektet, ikke bare ID som den over
+let userSelectedGroup; //den valgte gruppen, settes i activityController.js
 let activityButton = "activeButton"; //brukes for å indikere hvilken side du er på. Er egentlig bare en style
 let groupButton = ""; //samme som over. Det bytter hvilken som har "activeButton"
 let namesOfGroups; //viser alle navnene på gruppene tilknyttet brukern. Genereres i getGroups()
@@ -22,3 +23,4 @@ let tempArray = []; //brukes for å lagre alle aktiviteter (activitiesArray[i].n
 let groupList; //vises i groupsHome.js og settes i groups() i groupController.js
 let groupToView; //settes i editGroup() som blir kalt fra groups() i groupController.js. Hentes fra groupsHome.js
 let groupMembers = ""; //samme som over
+let groupAge = []; //lagrer aldrene på medlemmene i gruppa. Sortert lavest - høyest. Fylles i getGroupAge() i filterController()

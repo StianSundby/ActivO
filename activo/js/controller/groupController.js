@@ -32,9 +32,16 @@ function groups() {
 	}
 }
 
+function removeGroupMember(index, memberIndex) {
+	let memberArray = model.app.currentUser.groups[index].members;
+	memberArray.splice(memberIndex, 1);
+	editGroup(index);
+}
+
 //kalles fra groups(), som kalles fra loadGroups(), som kalles fra groupsHome()
 //parameteret er "i" fra en for-løkke
 function editGroup(index) {
+	groupMembers = "";
 	model.input.currentGroup = index;
 
 	groupToView = model.app.currentUser.groups[index].name; //navnet på gruppa
@@ -42,9 +49,11 @@ function editGroup(index) {
 	for (let i = 0; i < model.app.currentUser.groups[index].members.length; i++) {
 		groupMembers +=
 			`<div onclick='${(model.input.editingGroup = model.app.currentUser.groups[index])}'>` +
-			`<i  style="cursor: pointer;"
-					class="fas fa-trash filter-orange">
-					</i>` +
+			`<i 
+				onclick="removeGroupMember(${index}, ${i})"
+				style="cursor: pointer;"
+				class="fas fa-trash filter-orange">
+			</i>` +
 			model.app.currentUser.groups[index].members[i].name +
 			"</div>" +
 			"<br>";

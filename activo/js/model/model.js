@@ -6,7 +6,7 @@ const model = {
 		currentUser: {},
 	},
 	input: {
-		currentGroup: null,
+		currentGroup: [],
 		changeGroupName: "",
 		editingGroup: "",
 		filtersChecked: [
@@ -169,8 +169,8 @@ const model = {
 				],
 			},
 		],
-		// Here comes the 44 activites.
-		// if a state is set to null then it can be either or
+		// Aktiviteter:
+		// Hvis et filter er satt til null så spiller det ingen rolle.
 		activities: [
 			{
 				name: "Go for a walk",
@@ -181,6 +181,7 @@ const model = {
 					{ winter: null },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go for a run",
@@ -191,6 +192,7 @@ const model = {
 					{ winter: null },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go to the gym",
@@ -201,6 +203,7 @@ const model = {
 					{ winter: null },
 					{ physical: true },
 				],
+				ageLimit: 15,
 			},
 			{
 				name: "Cross-country skiing",
@@ -211,6 +214,7 @@ const model = {
 					{ winter: true },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Downhill-skiing",
@@ -221,6 +225,7 @@ const model = {
 					{ winter: true },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Bikeride",
@@ -231,6 +236,7 @@ const model = {
 					{ winter: null },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go for a swim",
@@ -241,6 +247,7 @@ const model = {
 					{ winter: false },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Ice bath!",
@@ -251,6 +258,7 @@ const model = {
 					{ winter: true },
 					{ physical: true },
 				],
+				ageLimit: 15,
 			},
 			{
 				name: "Rockclimbing",
@@ -261,6 +269,7 @@ const model = {
 					{ winter: null },
 					{ physical: true },
 				],
+				ageLimit: 7,
 			},
 			{
 				name: "Play tennis",
@@ -271,6 +280,7 @@ const model = {
 					{ winter: null },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go bowling",
@@ -281,6 +291,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: 6,
 			},
 			{
 				name: "Go to the cinema",
@@ -291,6 +302,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: 6,
 			},
 			{
 				name: "Go to an Escape Room",
@@ -301,6 +313,7 @@ const model = {
 					{ winter: null },
 					{ physical: true },
 				],
+				ageLimit: 9,
 			},
 			{
 				name: "Play squash",
@@ -311,6 +324,7 @@ const model = {
 					{ winter: null },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go to a concert",
@@ -321,6 +335,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Play some board games",
@@ -331,6 +346,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Play a game of cards",
@@ -341,6 +357,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go on a fishing trip",
@@ -351,6 +368,7 @@ const model = {
 					{ winter: true },
 					{ physical: null },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go ice-fishing!",
@@ -361,6 +379,7 @@ const model = {
 					{ winter: true },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go camping",
@@ -371,6 +390,7 @@ const model = {
 					{ winter: null },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go to the theatre",
@@ -381,6 +401,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Play golf",
@@ -391,6 +412,7 @@ const model = {
 					{ winter: false },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go play minigolf",
@@ -401,6 +423,7 @@ const model = {
 					{ winter: null },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go on a road-trip",
@@ -411,6 +434,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go to the beach",
@@ -421,6 +445,7 @@ const model = {
 					{ winter: false },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go ice skating",
@@ -431,6 +456,7 @@ const model = {
 					{ winter: true },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Grab something to eat",
@@ -441,6 +467,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Sing some karaoke",
@@ -451,6 +478,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Play paintball",
@@ -461,6 +489,7 @@ const model = {
 					{ winter: false },
 					{ physical: true },
 				],
+				ageLimit: 12,
 			},
 			{
 				name: "Play lasertag",
@@ -471,6 +500,7 @@ const model = {
 					{ winter: null },
 					{ physical: true },
 				],
+				ageLimit: 10,
 			},
 			{
 				name: "Go shopping",
@@ -481,6 +511,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go on a boat ride",
@@ -491,6 +522,7 @@ const model = {
 					{ winter: false },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go to an amusementpark",
@@ -501,6 +533,7 @@ const model = {
 					{ winter: false },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Visit a museum",
@@ -511,6 +544,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Visit a zoo",
@@ -521,6 +555,7 @@ const model = {
 					{ winter: false },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Play shuffleboard",
@@ -531,6 +566,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go rollerblading",
@@ -541,6 +577,7 @@ const model = {
 					{ winter: false },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Grab a coffee",
@@ -551,6 +588,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go GeoCaching",
@@ -561,6 +599,7 @@ const model = {
 					{ winter: null },
 					{ physical: true },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Bake something tasty",
@@ -571,6 +610,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Paint a picture",
@@ -581,6 +621,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go bungee-jumping",
@@ -591,6 +632,7 @@ const model = {
 					{ winter: false },
 					{ physical: true },
 				],
+				ageLimit: 16,
 			},
 			{
 				name: "Play snooker",
@@ -601,6 +643,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 			{
 				name: "Go skydiving!",
@@ -611,6 +654,7 @@ const model = {
 					{ winter: false },
 					{ physical: true },
 				],
+				ageLimit: 16,
 			},
 			{
 				name: "Go to a flee-market",
@@ -621,6 +665,7 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
+				ageLimit: null,
 			},
 		],
 	},
