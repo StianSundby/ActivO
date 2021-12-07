@@ -1,25 +1,22 @@
 //venstre side av appen. Høyre side settes inn i "page" eller "loadActivity"
 function activityHome() {
+	switchStylesheet("stylesheets/twoColumns.css");
+
 	appDiv.innerHTML = /*html*/ `
 	<div class="container">
-	
-            <div class="homeContent">
-				<div class="leftSide">
-					<img class="logo" height="250px" width="250px" src="resources/images/ActivO.png">
-					<div>
-						<button class="${activityButton}" onclick="newActivity()">New activity</button>
-						<br>
-						<button class="${groupButton}" onclick="groupsHome()">Groups</button>
-						<br>
-						<button id="logoutButton" onclick="logOut()">Logout</button>
-					</div>
-				</div>
-                <div class="rightSide"> 
-					<div class="groups">
-                    	${loadActivity()} 
-					</div>
-                </div>
+		<div class="leftSide">
+			<img height="250px" width="250px" src="resources/images/ActivO.png">
+            <div class="buttonContainer">
+				<button class="${activityButton}" onclick="newActivity()">New activity</button>
+				<button class="${groupButton}" onclick="groupsHome()">Groups</button><br>
+                <button id="logoutButton" onclick="logOut()">Logout</button>
 			</div>
+		</div>
+		<div class="rightSide">
+			<h2 class="header">Select a group:</h2>
+			<div class="groupsContainer">${loadActivity()} </div>
+		</div>
+	</div>
     `;
 }
 
@@ -39,13 +36,13 @@ function getGroups() {
 	namesOfGroups = "";
 	if (model.app.currentUser.groups.length <= 0) {
 		namesOfGroups += `
-		<p class="groupList1">You don't have any groups, click the button to make one</p>
+		<p>You don't have any groups, click the button to make one</p>
 		<button onclick="groupsHome()">Next</button>
 		`;
 		return;
 	}
 	for (let i = 0; i < model.app.currentUser.groups.length; i++) {
-		let groupDiv = `<div onclick='groupInfo(${i})'>${model.app.currentUser.groups[i].name}</div><br>`;
+		let groupDiv = `<div class="groupNames" style="font-size: 18px;" onclick='groupInfo(${i})'>${model.app.currentUser.groups[i].name}</div><br>`;
 		namesOfGroups += groupDiv;
 	}
 }

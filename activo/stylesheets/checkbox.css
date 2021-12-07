@@ -1,193 +1,68 @@
-.b-contain *,
-.b-contain *::before,
-.b-contain *::after {
-	box-sizing: content-box !important;
-}
-
-.b-contain input {
-	position: absolute;
-	z-index: -1;
-	opacity: 0;
-}
-
-.b-contain span {
-	line-height: 1.54;
-	font-size: 1rem;
-	font-family: inherit;
-}
-
-.b-contain {
-	display: table;
+/* endre label / container */
+.checkboxContainer {
+	display: block;
 	position: relative;
-	padding-left: 1.8rem;
+	padding-left: 25px;
+	margin-bottom: 5px;
 	cursor: pointer;
-	margin-bottom: 0.5rem;
+	font-size: 18px;
+	color: white;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
-.b-contain input[type="checkbox"] ~ .b-input {
+/* custom checkbox */
+.checkmark {
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 1.25rem;
-	width: 1.25rem;
-	background: rgba(71, 71, 71, 1);
-	transition: background 250ms;
-	border: 1px solid rgba(236, 127, 19, 1);
-	border-radius: 0.277rem;
+	height: 18px;
+	width: 18px;
+	background-color: rgb(65, 65, 65);
+	border: 1px solid #ec7f13;
 }
 
-.b-contain input[type="radio"] ~ .b-input {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 1.25rem;
-	width: 1.25rem;
-	background: rgba(71, 71, 71, 1);
-	transition: background 250ms;
-	border: 1px solid rgba(236, 127, 19, 1);
-	border-radius: 2rem;
-}
-
-.b-contain input[type="checkbox"] ~ .b-input::after {
-	content: "";
-	position: absolute;
-	display: none;
-	left: 0.45rem;
-	top: 0.18rem;
-	width: 0.25rem;
-	height: 0.6rem;
-	border: solid rgba(255, 255, 255, 1);
+/* custom checkmark */
+.checkboxContainer .checkmark:after {
+	left: 6px;
+	top: 2px;
+	width: 4px;
+	height: 9px;
+	border: solid #ec7f13;
 	border-width: 0 2px 2px 0;
-	transition: background 250ms;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
 
-.b-contain input[type="radio"] ~ .b-input::after {
+/* gjemmer browsern sin default checkbox */
+.checkboxContainer input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+.checkboxContainer input[disabled] ~ .checkmark {
+	cursor: not-allowed;
+}
+/* mouseover på checkboxen */
+.checkboxContainer:hover input ~ .checkmark {
+	background-color: rgb(126, 126, 126);
+}
+
+.checkboxContainer input[disabled] ~ .checkmark {
+	background-color: rgba(255, 0, 0, 0.226);
+}
+/* Gjemme checkmark når den ikke er checked */
+.checkmark:after {
 	content: "";
 	position: absolute;
 	display: none;
-	left: 0.25rem;
-	top: 0.25rem;
-	width: 0.75rem;
-	height: 0.75rem;
-	border-radius: 2rem;
-	background: rgba(255, 255, 255, 1);
-	transition: background 250ms;
 }
-
-.b-contain input:disabled ~ .b-input::after {
-	border-color: rgba(135, 149, 161, 1);
-}
-
-.b-contain input:checked ~ .b-input::after {
+/* Vise checkmark når den er checked */
+.checkboxContainer input:checked ~ .checkmark:after {
 	display: block;
-}
-
-.b-contain:hover input ~ .b-input,
-.b-contain input:focus ~ .b-input {
-	background: rgba(71, 71, 71, 1);
-}
-
-.b-contain input:focus ~ .b-input {
-	box-shadow: 0 0 0 2px rgba(236, 127, 19, 1);
-}
-
-.b-contain input:checked ~ .b-input {
-	background: rgba(236, 127, 19, 1);
-	border-color: rgba(255, 165, 76, 1);
-}
-
-.b-contain input[type="checkbox"]:disabled ~ .b-input {
-	background: rgba(241, 245, 248, 1);
-	border-color: rgba(184, 194, 204, 1);
-	opacity: 0.6;
-	cursor: not-allowed;
-}
-
-.b-contain input[type="radio"]:disabled ~ .b-input {
-	background: rgba(241, 245, 248, 1);
-	border-color: rgba(184, 194, 204, 1);
-	opacity: 0.6;
-	cursor: not-allowed;
-}
-
-.b-contain input[type="radio"]:disabled ~ .b-input::after {
-	background: rgba(135, 149, 161, 1);
-}
-
-.b-contain input:checked:focus ~ .b-input,
-.b-contain:hover input:not([disabled]):checked ~ .b-input {
-	background: rgba(214, 139, 64, 1);
-	border-color: rgba(0, 0, 0, 1);
-}
-
-.b-contain .b-input::before {
-	content: "";
-	display: block;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 3rem;
-	height: 3rem;
-	margin-left: -0.85rem;
-	margin-top: -0.85rem;
-	background: rgba(236, 127, 19, 1);
-	border-radius: 2rem;
-	opacity: 0.6;
-	z-index: 99999;
-	transform: scale(0);
-}
-
-@keyframes b-ripple {
-	0% {
-		transform: scale(0);
-	}
-
-	20% {
-		transform: scale(1);
-	}
-
-	100% {
-		opacity: 0;
-		transform: scale(1);
-	}
-}
-
-@keyframes b-ripple-duplicate {
-	0% {
-		transform: scale(0);
-	}
-
-	30% {
-		transform: scale(1);
-	}
-
-	60% {
-		transform: scale(1);
-	}
-
-	100% {
-		opacity: 0;
-		transform: scale(1);
-	}
-}
-
-.b-contain input + .b-input::before {
-	animation: b-ripple 250ms ease-out;
-}
-
-.b-contain input:checked + .b-input::before {
-	animation-name: b-ripple-duplicate;
-}
-
-.b-contain .b-input::before {
-	visibility: hidden;
-}
-
-.b-contain input:focus + .b-input::before {
-	visibility: visible;
-}
-
-.b-contain:first-child .b-input::before {
-	visibility: hidden;
 }

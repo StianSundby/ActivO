@@ -1,0 +1,56 @@
+/* Container  rundt alt i viewet*/
+.container {
+	z-index: 0;
+	max-width: 32vw;
+	max-height: 60vh;
+	margin: 15vh auto;
+	padding: 1em;
+
+	background-color: rgb(71, 71, 71);
+	filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+	position: relative;
+	border: 2px solid #ec7f13;
+	display: grid;
+
+	grid-template-columns: 15vw 20vw;
+	grid-template-rows: 1fr;
+	grid-column-gap: 2vw;
+}
+
+/* alt som er på venstre side av skjermen */
+.leftSide {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+
+	z-index: 1;
+	grid-area: 1 / 1 / 2 / 2;
+
+	text-align: center;
+
+	max-height: 60vh;
+	width: 15vw;
+	font-size: 1.5rem;
+
+	background-color: rgb(65, 65, 65);
+}
+
+/* alt som er på høyre siden av skjermen */
+.rightSide {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	z-index: 1;
+	grid-area: 1 / 2 / 2 / 3;
+
+	text-align: center;
+
+	max-height: 60vh;
+	width: 15vw;
+	font-size: 1.5rem;
+	background-color: rgb(65, 65, 65);
+}

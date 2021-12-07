@@ -11,16 +11,17 @@ function groups() {
 	groupList = "";
 	if (model.app.currentUser.groups.length <= 0) {
 		groupList += `
-		<p class="groupList1">You don't have any groups, click the button to make one</p>
-		<button onclick="groupsHome()">Next</button>
+		<p style="color: white; font-size: 18px;" class="groupList1">You don't have any groups, click the button to make one</p>
+		<button class="nextButton" onclick="groupsHome()">Next</button>
 		`;
 		return;
 	}
 	for (let i = 0; i < model.app.currentUser.groups.length; i++) {
 		let groupDiv = `
-			<div onclick="editGroup(${i})">
+			<div class="groupList" >
 				<i  style="cursor: pointer;" 
-					class="fas fa-cog filter-orange">
+					class="fas fa-cog filter-orange"
+					onclick="editGroup(${i})">
 				</i>
 				${model.app.currentUser.groups[i].name}
 			</div>
@@ -40,7 +41,9 @@ function removeGroupMember(index, memberIndex) {
 
 //kalles fra groups(), som kalles fra loadGroups(), som kalles fra groupsHome()
 //parameteret er "i" fra en for-løkke
+let groupIndex;
 function editGroup(index) {
+	groupIndex = index;
 	groupMembers = "";
 	model.input.currentGroup = index;
 
@@ -54,6 +57,7 @@ function editGroup(index) {
 				style="cursor: pointer;"
 				class="fas fa-trash filter-orange">
 			</i>` +
+			" " +
 			model.app.currentUser.groups[index].members[i].name +
 			"</div>" +
 			"<br>";
@@ -70,7 +74,9 @@ function addMember() {
 	};
 
 	//pusher det nye medlemmet inn i arrayet av medlemmer til gruppa
-	currentUser.groups[model.input.currentGroup].members.push(newMember);
+	model.app.currentUser.groups[model.input.currentGroup].members.push(newMember);
+	//oppdatere lista med medlemmer
+	editGroup(groupIndex);
 }
 
 //kalles fra groupsAdd()
@@ -80,7 +86,7 @@ function createNewGroup() {
 		name: model.input.createNewGroup.name,
 		members: [], //ingen medlemmer enda. Det settes i groupsEdit()
 	};
-	currentUser.groups.push(newGroup); //pusher den nye gruppa inn i groups[] arrayet til brukern
+	model.app.currentUser.groups.push(newGroup); //pusher den nye gruppa inn i groups[] arrayet til brukern
 	model.data.lastGroupID = model.data.lastGroupID + 1;
 	groupsHome(); //endrer/oppdaterer Viewet
 }

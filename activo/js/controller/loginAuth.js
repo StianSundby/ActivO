@@ -1,4 +1,4 @@
-checkInfo();
+// checkInfo();
 //sjekker om det som er skrevet inn i inputfeltene stemmer overns/finnes i modellen
 function checkInfo() {
 	let userList = model.data.users;
@@ -11,17 +11,11 @@ function checkInfo() {
 				//sjekker om passordet stemmer
 				model.app.currentUser = userList[i]; //setter signedInUser til id'en til brukern
 				activityHome(); //bytter fra loginView() til appView()
-			} else if (inputPassword != userList[i].password) {
-				//hvis passordet ikke stemmer
-				alert("Error, wrong username or password");
 				return;
 			}
-		} else if (i >= userList.length) {
-			//gått igjennom alle brukerne
-			alert("Error, wrong username or password");
-			return;
 		}
 	}
+	alert("Error, wrong username or password");
 }
 
 function logOut() {

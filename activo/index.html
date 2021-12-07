@@ -5,14 +5,29 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- CSS -->
+		<link rel="stylesheet" href="stylesheets/main.css" />
+
 		<link rel="stylesheet" href="stylesheets/login.css" />
-		<link rel="stylesheet" href="stylesheets/app.css" />
-		<link rel="stylesheet" href="stylesheets/checkbox.css" />
+		<link rel="stylesheet" href="stylesheets/activity.css" />
 		<link rel="stylesheet" href="stylesheets/groups.css" />
+		<link rel="stylesheet" href="stylesheets/checkbox.css" />
+
+		<!-- Endres ettersom hvilket view vi er på. -->
+		<!-- Om det skal ha 2 eller 3 kolonner -->
+		<link rel="stylesheet" href="" />
+
 		<title>Activo</title>
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<script>
+			// bytter stylesheet mellom 2 og 3 kolonner
+			function switchStylesheet(stylesheetHref) {
+				let sheets = document.getElementsByTagName("link");
+				sheets[5].href = stylesheetHref;
+			}
+		</script>
 	</head>
 
 	<body>

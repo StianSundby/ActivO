@@ -54,12 +54,11 @@ function randomActivity() {
 	if (acitivitiesCount >= 1) {
 		for (let i = 0; i < acitivitiesCount; i++) {
 			let randomIndex = Math.floor(Math.random() * tempArray.length);
-			activtiesHtml += "●" + tempArray[randomIndex] + "<br><br>";
+			activtiesHtml += "● " + tempArray[randomIndex] + "<br><br>";
 			tempArray.splice(randomIndex, 1);
 		}
 	} else {
 		activtiesHtml = "No other activities to suggest. Try changing your filters";
 	}
-	console.log(tempArray);
 	activitySuggestions();
 }

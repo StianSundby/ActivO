@@ -21,7 +21,7 @@ const model = {
 			password: "startcoding",
 		},
 		createNewGroup: {
-			name: "Terje",
+			name: "",
 		},
 		addNewMember: {
 			name: null,
@@ -210,7 +210,7 @@ const model = {
 				filters: [
 					{ free: true },
 					{ indoors: false },
-					{ city: false },
+					{ city: null },
 					{ winter: true },
 					{ physical: true },
 				],
@@ -287,7 +287,7 @@ const model = {
 				filters: [
 					{ free: false },
 					{ indoors: true },
-					{ city: true },
+					{ city: null },
 					{ winter: null },
 					{ physical: false },
 				],
@@ -324,7 +324,7 @@ const model = {
 					{ winter: null },
 					{ physical: true },
 				],
-				ageLimit: null,
+				ageLimit: 9,
 			},
 			{
 				name: "Go to a concert",
@@ -335,13 +335,13 @@ const model = {
 					{ winter: null },
 					{ physical: false },
 				],
-				ageLimit: null,
+				ageLimit: 5,
 			},
 			{
 				name: "Play some board games",
 				filters: [
 					{ free: true },
-					{ indoors: true },
+					{ indoors: null },
 					{ city: null },
 					{ winter: null },
 					{ physical: false },
@@ -365,7 +365,7 @@ const model = {
 					{ free: true },
 					{ indoors: false },
 					{ city: false },
-					{ winter: true },
+					{ winter: false },
 					{ physical: null },
 				],
 				ageLimit: null,
@@ -386,7 +386,7 @@ const model = {
 				filters: [
 					{ free: true },
 					{ indoors: false },
-					{ city: false },
+					{ city: null },
 					{ winter: null },
 					{ physical: true },
 				],
@@ -412,7 +412,7 @@ const model = {
 					{ winter: false },
 					{ physical: true },
 				],
-				ageLimit: null,
+				ageLimit: 10,
 			},
 			{
 				name: "Go play minigolf",
@@ -451,9 +451,9 @@ const model = {
 				name: "Go ice skating",
 				filters: [
 					{ free: null },
-					{ indoors: false },
+					{ indoors: null },
 					{ city: null },
-					{ winter: true },
+					{ winter: null },
 					{ physical: true },
 				],
 				ageLimit: null,
@@ -507,7 +507,7 @@ const model = {
 				filters: [
 					{ free: false },
 					{ indoors: null },
-					{ city: true },
+					{ city: null },
 					{ winter: null },
 					{ physical: false },
 				],
@@ -604,7 +604,7 @@ const model = {
 			{
 				name: "Bake something tasty",
 				filters: [
-					{ free: null },
+					{ free: false },
 					{ indoors: true },
 					{ city: false },
 					{ winter: null },
